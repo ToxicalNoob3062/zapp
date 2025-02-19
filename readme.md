@@ -15,6 +15,7 @@ Zapp is a lightweight web framework designed to simplify handling HTTP requests 
 - Middleware should only be used to modify the `req` or `res` object. Sending the response of the request back from middleware will cause the app to crash.
 - The route handler should always return a response. Otherwise, the request will hang up and cause unintended consequences.
 - Middleware are executed in order in which they are defined in code or usage.
+- The library auto parses request body if it's `content-type` is `application/json` or `application/x-www-form-urlencoded`. For other's use middleware.
 
 ## Installation
 
@@ -63,8 +64,6 @@ app.use(async (req, res) => {
   req.user = { name: "John Doe" }; // Attach data to the request
 });
 ```
-
-> **Caution:** Middleware should only modify `req` and `res` objects, not send responses. If a middleware sends a response, subsequent middlewares and route handlers will not execute.
 
 ---
 
