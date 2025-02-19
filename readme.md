@@ -10,6 +10,11 @@ Zapp is a lightweight web framework designed to simplify handling HTTP requests 
 - JSON and text responses
 - Static file serving
 
+## Caution
+
+- Middleware should only be used to modify the `req` or `res` object. Sending the response of the request back from middleware will cause the app to crash.
+- The route handler should always return a response. Otherwise, the request will hang up and cause unintended consequences.
+
 ## Installation
 
 Since this is a custom-built framework, simply include the `Zapp` class in your project and use it in your `server.js` file.
