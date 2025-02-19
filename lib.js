@@ -2,10 +2,6 @@ import { Request } from "./request.js";
 import { Response } from "./response.js";
 import http from "http";
 
-/* 
-A library  which is extremely light weight with some minimal features made by me to replace prof's boring code!
-I am one of the most lazy coders so I did some extra work to save my time in upcoming projects as long prof doesn't allow npm packages.
-*/
 export class Zapp {
   server = null;
   middlewares = [];
